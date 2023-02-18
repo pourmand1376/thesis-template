@@ -5,7 +5,7 @@ import re
 directory = '.'
 
 # Define the pattern to match against
-pattern = r'\\پاورق\s*{(.+)}\s*{(.+)}'
+pattern = r'\\پاورق\s*?{(.+?)}\s*?{(.+?)}'
 
 # Initialize a list to store the matched results
 matched_results = []
