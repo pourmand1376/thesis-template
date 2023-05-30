@@ -9,11 +9,15 @@
 \usepackage{minitoc} %table of content for each chapter
 \usepackage[usenames,dvipsnames]{pstricks}
 \usepackage{graphicx,subfigure,wrapfig}
-\usepackage{geometry}
+\usepackage{geometry,fancyhdr}
 \usepackage[mathscr]{euscript}
 \usepackage{multicol}
 \usepackage{multirow}
 \usepackage[figureposition=bottom,tableposition=top,font={small,bf},labelfont=bf]{caption}
+
+\usepackage{makecell}
+\usepackage{bbm}
+\usepackage{booktabs}
 
 \usepackage{algorithmicx,algorithm}
 
@@ -32,9 +36,9 @@
 \linespread{1.6}
 \setlength{\parskip}{0.45em}
 
-%\fancyhf{}
-%\rhead{\leftmark}
-%\lhead{\thepage}
+\fancyhf{}
+\rhead{\leftmark}
+\lhead{\thepage}
 
 
 % -------------------- Fonts --------------------

@@ -7,7 +7,7 @@ directory = '.'
 
 # Define the pattern to match against
 pattern = r'\\پاورق\s*{(.+)}\s*{(.+)}'
-
+0
 # Initialize a list to store the matched results
 matched_results = []
 
@@ -16,7 +16,8 @@ for root, dirs, files in os.walk(directory):
     # Loop over each file in the directory
     for filename in files:
         # Check if the file is a '.tex' file
-        if filename.endswith('.tex'):
+        if filename.endswith('.tex') and \
+        filename != 'dictionary.tex' and filename != 'dictionary_en.tex':
             # Read the content of the file
             filepath = os.path.join(root, filename)
             with open(filepath, 'r', encoding="utf-8") as file:
