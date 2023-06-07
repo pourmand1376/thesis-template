@@ -7,7 +7,7 @@ directory = '.'
 
 # Define the pattern to match against
 pattern = r'\\پاورق\s*{(.+)}\s*{(.+)}'
-0
+
 # Initialize a list to store the matched results
 matched_results = []
 
@@ -16,8 +16,7 @@ for root, dirs, files in os.walk(directory):
     # Loop over each file in the directory
     for filename in files:
         # Check if the file is a '.tex' file
-        if filename.endswith('.tex') and \
-        filename != 'dictionary.tex' and filename != 'dictionary_en.tex':
+        if filename.endswith('.tex'):
             # Read the content of the file
             filepath = os.path.join(root, filename)
             with open(filepath, 'r', encoding="utf-8") as file:
@@ -47,7 +46,7 @@ with open('front/dictionary.tex','w',encoding='utf-8') as texfile:
             texfile.write(f'\n\t\\dicalphabet{{{current_letter}}}\n')
             previous_letter = current_letter
 
-        texfile.write(f'\t\\dic{{{english}}}{{{farsi}}}\n')
+        texfile.write(f'\t\\dic{{{english.capitalize()}}}{{{farsi}}}\n')
 
 
     texfile.write(r"""
@@ -64,6 +63,7 @@ with open('front/dictionary_en.tex','w',encoding='utf-8') as texfile:
 
     \chapter*{واژه‌نامه انگلیسی به فارسی}
     \begin{multicols}{2}
+    \LTRmulticolcolumns
     \small
     """)
     previous_letter = ''
@@ -73,7 +73,7 @@ with open('front/dictionary_en.tex','w',encoding='utf-8') as texfile:
             texfile.write(f'\n\t\\dicalphabet{{{current_letter.upper()}}}\n')
             previous_letter = current_letter
 
-        texfile.write(f'\t\\dic{{{english}}}{{{farsi}}}\n')
+        texfile.write(f'\t\\dic{{{english.capitalize()}}}{{{farsi}}}\n')
 
 
     texfile.write(r"""
